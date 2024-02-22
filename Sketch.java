@@ -1,36 +1,41 @@
 import processing.core.PApplet;
 
+ /**
+   * Draw a house
+   * @author:n.judd
+   */
+
 public class Sketch extends PApplet {
-	
-	
-  /**
-   * Called once at the beginning of execution, put your size all in this method
-   */
+  // variables
+  int intH = 1;
+  int intW = 1;
+
+  // size of the image
   public void settings() {
-	// put your size call here
-    size(400, 400);
+    size(600 * intW, 600 * intH);
   }
 
-  /** 
-   * Called once at the beginning of execution.  Add initial set up
-   * values here i.e background, stroke, fill etc.
-   */
+  // sets background colour
   public void setup() {
-    background(210, 255, 173);
+    background(66, 182, 245);
   }
 
-  /**
-   * Called repeatedly, anything drawn to the screen goes here
-   */
+  // draws house
   public void draw() {
-	  
-	// sample code, delete this stuff
-    stroke(128);
-    line(150, 25, 270, 350);  
-
+    // base and ceiling
     stroke(255);
-    line(50, 125, 70, 50);  
+    line((175 * intW), (550 * intH), (425 * intW), (550 * intH));
+    line((175* intW), (325 * intH), (425 * intW), (325 * intH));
+    // walls
+    line((175 * intW), (550 * intH), (175 * intW), (325 * intH));
+    line((425 * intW), (550 * intH), (425 * intW), (325 * intH));
+    // roof
+    triangle((175 * intW), (325 * intH), (425 * intW), (325 * intH), (300 * intW), (200 * intH));
+    // door
+    line((275 * intW), (475 * intH), (275 * intW), (550 * intH));
+    line((325 * intW), (475 * intH), (325 * intW), (550 * intH));
+    line((275 * intW), (475 * intH), (325 * intW), (475 * intH));
+    // doornob
+    ellipse((315 * intW), (515 * intH), (8 * intW), (8 * intH));
   }
-  
-  // define other methods down here.
 }
